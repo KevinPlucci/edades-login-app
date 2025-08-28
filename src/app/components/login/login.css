@@ -1,21 +1,6 @@
-.topbar {
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-}
-.topbar a {
-  padding: 6px 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-}
-.topbar a.active {
-  background: #efefef;
-}
 .card {
-  max-width: 520px;
-  margin: 18px auto;
+  max-width: 480px;
+  margin: 24px auto;
   padding: 16px;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -23,9 +8,26 @@
   flex-direction: column;
   gap: 8px;
 }
+label {
+  font-weight: 600;
+}
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.pass-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.pass-row button {
+  padding: 8px 10px;
+}
 .buttons {
   display: flex;
   gap: 8px;
+  margin-top: 8px;
 }
 button {
   padding: 8px 12px;
@@ -36,7 +38,4 @@ button {
 }
 button.secondary {
   background: #fff;
-}
-.outputs input[readonly] {
-  background: #fafafa;
 }
