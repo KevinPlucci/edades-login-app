@@ -1,25 +1,21 @@
 <section class="card">
   <h1>Login</h1>
-
   <label>Usuario</label>
-  <input [(ngModel)]="usuario.nombre" placeholder="Usuario" />
-
+  <input [(ngModel)]="cred.nombre" />
   <label>Clave</label>
   <div class="pass-row">
     <input
       [type]="mostrandoPass ? 'text' : 'password'"
-      [(ngModel)]="usuario.clave"
-      placeholder="Clave"
+      [(ngModel)]="cred.clave"
     />
     <button type="button" (click)="mostrandoPass = !mostrandoPass">
       {{ mostrandoPass ? "🙈" : "👁️" }}
     </button>
   </div>
-
   <div class="buttons">
     <button (click)="login()">Ingresar</button>
     <button class="secondary" (click)="limpiar()">Limpiar</button>
   </div>
-
-  <small>Tip: usuario <b>admin</b> / clave <b>1234</b></small>
+  <small>¿No tenés cuenta? <a routerLink="/registro">Registrate</a></small>
+  <p [hidden]="!msg">{{ msg }}</p>
 </section>

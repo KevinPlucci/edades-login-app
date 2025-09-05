@@ -1,0 +1,15 @@
+<section class="card">
+  <h2>Registro</h2>
+  <label>Usuario</label>
+  <input [(ngModel)]="datos.nombre" />
+  <label>Clave</label>
+  <input type="password" [(ngModel)]="datos.clave" />
+  <div class="buttons">
+    <button (click)="registrar()">Crear cuenta</button>
+    <button class="secondary" (click)="limpiar()">Limpiar</button>
+  </div>
+  @if (msg) {
+  <p>{{ msg }}</p>
+  }
+  <a routerLink="/login">Ir a Login</a>
+</section>

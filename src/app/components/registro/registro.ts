@@ -5,28 +5,26 @@ import { AuthService } from '../../services/auth.service';
 import { Usuario } from '../../models/usuario';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-registro',
   standalone: true,
   imports: [FormsModule, RouterLink],
-  templateUrl: './login.html',
-  styleUrls: ['./login.css'],
+  templateUrl: './registro.html',
+  styleUrls: ['./registro.css'],
 })
-export class LoginComponent {
-  cred: Usuario = { nombre: '', clave: '' };
-  mostrandoPass = false;
+export class RegistroComponent {
+  datos: Usuario = { nombre: '', clave: '' };
   msg = '';
 
   constructor(private auth: AuthService, private router: Router) {}
 
-  login() {
-    const res = this.auth.login(this.cred);
+  registrar() {
+    const res = this.auth.registrar(this.datos);
     this.msg = res.msg;
-    if (res.ok) this.router.navigate(['/bienvenido']);
-    else this.router.navigate(['/error']); // si tu consigna pide redirigir al error
+    if (res.ok) setTimeout(() => this.router.navigate(['/login']), 800);
   }
 
   limpiar() {
-    this.cred = { nombre: '', clave: '' };
+    this.datos = { nombre: '', clave: '' };
     this.msg = '';
   }
 }
